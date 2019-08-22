@@ -10,8 +10,8 @@
     <p>open console to play</p>
 
     <script>
-        function computerPlay() {
-            let play = Math.floor(Math.random() * (3));
+        function computerPlay() {                                   //random picker for computer
+            let play = Math.floor(Math.random() * (3));            //gives 0, 1 or 2 return value
             if (play === 0) {
                 return 'rock';
             } else if (play === 1) {
@@ -52,9 +52,10 @@
     
         }
 
-        function getInput() {
+        function getInput() {                                                       //get user input
             let input = prompt("lets play, please enter rock, paper, or scissors");
             input = input.toLowerCase();
+            //research why didn't if statement work with NOT equal comparisons
             if (input == 'rock' || input == 'paper' || input == 'scissors') {
                 return input;
             } else {
