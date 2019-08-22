@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissor</title>
+</head>
+<body>
+    <p>open console to play</p>
+
+    <script>
+        function computerPlay() {
+            let play = Math.floor(Math.random() * (3));
+            if (play === 0) {
+                return 'rock';
+            } else if (play === 1) {
+                return 'paper';
+            } else {
+                return 'scissors';
+            }
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = getInput();
+            computerSelection = computerPlay();
+            if (playerSelection === computerSelection) {
+                return 'its a draw, please choose again!';
+            } 
+            else if (playerSelection === 'rock') {
+
+                if (computerSelection === 'paper') {
+                    return 'you lose, paper beats rock!';
+                } else {
+                    return 'you win, rock beats scissors';
+                }
+            } 
+            else if (playerSelection === 'paper') {
+                if (computerSelection === 'rock') {
+                    return 'you win, paper beats rock!';
+                } else {
+                    return 'you lose, scissors beat paper!';
+                }
+            }
+            else if (playerSelection === 'scissors') {
+                if (computerSelection === 'paper') {
+                    return 'you win, scissors beat paper!';
+                } else {
+                    return 'you lose, rock beats scissors!';
+                }
+            }
+    
+        }
+
+        function getInput() {
+            let input = prompt("lets play, please enter rock, paper, or scissors");
+            input = input.toLowerCase();
+            if (input == 'rock' || input == 'paper' || input == 'scissors') {
+                return input;
+            } else {
+                alert('invalid input, please try again');
+                getInput();
+            }
+        }
+    
+    
+    </script>
+</body>
+</html>
